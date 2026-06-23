@@ -1,0 +1,381 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Only For Iseoluwa 🌹</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#ffd6e7,#fff5f8);
+
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.container{
+
+text-align:center;
+
+z-index:5;
+
+}
+
+.envelope{
+
+font-size:120px;
+
+cursor:pointer;
+
+transition:.5s;
+
+animation:float 2s infinite;
+
+}
+
+.envelope:hover{
+
+transform:scale(1.1);
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+.hidden{
+
+display:none;
+
+}
+
+h1{
+
+color:#d63384;
+
+margin-top:15px;
+
+font-size:40px;
+
+}
+
+.message{
+
+width:0;
+
+overflow:hidden;
+
+white-space:nowrap;
+
+border-right:3px solid #d63384;
+
+animation:typing 5s steps(70,end) forwards;
+
+margin:auto;
+
+font-size:20px;
+
+color:#555;
+
+}
+
+@keyframes typing{
+
+to{
+
+width:100%;
+
+}
+
+}
+
+.roses{
+
+font-size:55px;
+
+animation:float 2s infinite;
+
+margin:20px;
+
+}
+
+.heart{
+
+position:absolute;
+
+font-size:25px;
+
+animation:rise 6s linear forwards;
+
+}
+
+@keyframes rise{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-20vh);
+
+opacity:0;
+
+}
+
+}
+
+.spark{
+
+position:absolute;
+
+font-size:18px;
+
+animation:spark 3s linear forwards;
+
+}
+
+@keyframes spark{
+
+0%{
+
+opacity:0;
+
+transform:scale(.2);
+
+}
+
+30%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translateY(-100px) scale(2);
+
+}
+
+}
+
+button{
+
+padding:12px 22px;
+
+border:none;
+
+background:#d63384;
+
+color:white;
+
+border-radius:10px;
+
+font-size:18px;
+
+cursor:pointer;
+
+margin-top:15px;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<div id="start">
+
+<div class="envelope" onclick="openGift()">
+💌
+</div>
+
+<h2>Someone left you a surprise...</h2>
+
+<p>Tap the envelope</p>
+
+</div>
+
+<div id="gift" class="hidden">
+
+<div class="roses">
+
+🌹🌹🌹
+
+🌹🌹🌹
+
+🌹🌹🌹
+
+</div>
+
+<h1>For Iseoluwa 💖</h1>
+
+<br>
+
+<div class="message">
+
+Some people receive flowers...
+You deserve a whole garden. 🌹✨
+
+</div>
+
+<br><br>
+
+<p style="color:#666;font-size:18px;">
+
+May your days be filled with joy,
+
+your nights with peace,
+
+and your smile never fade.
+
+You are appreciated more than you know. 💕
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function openGift(){
+
+document.getElementById("start").style.display="none";
+
+document.getElementById("gift").style.display="block";
+
+document.getElementById("music").play().catch(()=>{});
+
+hearts();
+
+sparkles();
+
+fireworks();
+
+}
+
+function hearts(){
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="💖";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),6000);
+
+},250);
+
+}
+
+function sparkles(){
+
+setInterval(()=>{
+
+let s=document.createElement("div");
+
+s.className="spark";
+
+s.innerHTML="✨";
+
+s.style.left=Math.random()*100+"vw";
+
+s.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(s);
+
+setTimeout(()=>s.remove(),3000);
+
+},180);
+
+}
+
+function fireworks(){
+
+setInterval(()=>{
+
+for(let i=0;i<20;i++){
+
+let f=document.createElement("div");
+
+f.className="spark";
+
+f.innerHTML=["✨","💖","🌸","⭐"][Math.floor(Math.random()*4)];
+
+f.style.left=(40+Math.random()*20)+"vw";
+
+f.style.top=(30+Math.random()*20)+"vh";
+
+f.style.fontSize=(15+Math.random()*20)+"px";
+
+document.body.appendChild(f);
+
+setTimeout(()=>f.remove(),3000);
+
+}
+
+},1800);
+
+}
+
+</script>
+
+</body>
+</html>
